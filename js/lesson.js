@@ -21,6 +21,7 @@ phoneButton.onclick = () => {
 const tabContentBlocks = document.querySelectorAll('.tab_content_block')
 const tabContentItems = document.querySelectorAll('.tab_content_item')
 const tabParent = document.querySelector('.tab_content_items')
+let currentIndex = 0
 const hideTabContent = () => {
     tabContentBlocks.forEach((item) => {
         item.style.display = 'none'
@@ -35,6 +36,12 @@ const showTabContent = (index = 0) => {
     tabContentItems[index].classList.add('tab_content_item_active')
 }
 
+const nextTabContent = () => {
+    hideTabContent();
+    currentIndex = (currentIndex + 1) % tabContentBlocks.length;
+    showTabContent(currentIndex);
+};
+
 hideTabContent()
 showTabContent()
 
@@ -44,7 +51,9 @@ tabParent.onclick = (event) => {
             if (event.target === item) {
                 hideTabContent()
                 showTabContent(index)
+                currentIndex = index
             }
         })
     }
 }
+setInterval(nextTabContent, 3000)
