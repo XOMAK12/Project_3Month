@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Rick",
+    "age": 65,
+    "person_photo": "https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NjQ2NjMyODQ1OTQ0MTg2/rick-sanchez-character-analysis-not-a-nihilist-but-a-cynic.jpg"
+  },
+  {
+    "name": "Morty",
+    "age": 14,
+    "person_photo": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/365e5edb-7b7f-415a-81c7-a848936e9e38.__CR0,0,300,300_PT0_SX300_V1___.jpg"
+  },
+  {
+    "name": "Jerry",
+    "age": 35,
+    "person_photo": "https://hips.hearstapps.com/hmg-prod/images/rick-and-morty-jerry-2-1624026834.jpeg?crop=0.563xw:1.00xh;0.254xw,0&resize=980:*"
+  }
+]

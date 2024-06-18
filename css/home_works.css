@@ -191,3 +191,42 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+/*HOME WORK4*/
+
+.card_container {
+    background: black;
+}
+
+.card_container .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    background-color: #ffd3d3;
+    border: 2px solid orange;
+    border-radius: 20px;
+}
+
+.card-content img {
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.info h4,p {
+    padding-top: 10px;
+    color: #414349;
+    font-size: 30px;
+}
