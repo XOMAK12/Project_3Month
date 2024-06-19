@@ -86,7 +86,7 @@ request.send();
 
 request.onload = () => {
     const data = JSON.parse(request.responseText);
-    data.forEach(function(person, index) {
+    data.forEach((person, index) => {
         const card = document.querySelector(`.card${index + 1}`);
         if (card) {
             card.innerHTML = `
