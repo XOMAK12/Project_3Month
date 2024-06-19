@@ -57,3 +57,6 @@ tabParent.onclick = (event) => {
     }
 }
 setInterval(nextTabContent, 3000)
+
+
+

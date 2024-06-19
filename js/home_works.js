@@ -77,32 +77,37 @@ resetBtn.onclick = () => {
     interval = null;
 }
 
+//HOMEWORK 4
 
+const request = new XMLHttpRequest();
+request.open('GET', '../data/persons.json');
+request.setRequestHeader('Content-type', 'application/json');
+request.send();
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const request = new XMLHttpRequest();
-    request.open('GET', '../data/persons.json');
-    request.setRequestHeader('Content-type', 'application/json');
-    request.send();
-
-    request.onload = function() {
-        if (request.status === 200) {
-            const data = JSON.parse(request.responseText);
-            data.forEach((person, index) => {
-                const card = document.querySelector(`.card${index + 1}`);
-                if (card) {
-                    card.innerHTML = `
-                        <div class="card-content">
-                            <img src="${person.person_photo}" alt="${person.name}" />
-                            <div class="info">
-                                <h4>${person.name}</h4>
-                                <p>Age: ${person.age}</p>
-                            </div>
-                        </div>
-                    `;
-                }
-            });
+request.onload = () => {
+    const data = JSON.parse(request.responseText);
+    data.forEach(function(person, index) {
+        const card = document.querySelector(`.card${index + 1}`);
+        if (card) {
+            card.innerHTML = `
+                <div class="card-content">
+                    <img src="${person.person_photo}" alt="${person.name}" />
+                    <div class="info">
+                        <h4>${person.name}</h4>
+                        <p>Age: ${person.age}</p>
+                    </div>
+                </div>
+            `;
         }
-    };
-});
+    });
+};
+
+const request2 = new XMLHttpRequest()
+request2.open('GET', '../data/persons2.json')
+request2.setRequestHeader('Content-type', 'application/json')
+request2.send()
+request2.onload = () => {
+    const data = JSON.parse(request2.responseText)
+    const info = data
+    console.log(info)
+}
