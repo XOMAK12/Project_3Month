@@ -29,6 +29,6 @@ const showModalOnScroll = () => {
     }
 }
 
-window.addEventListener('scroll', showModalOnScroll);
+window.addEventListener('scroll', showModalOnScroll)
 
-setTimeout(openModal, 10000);
+setTimeout(openModal, 10000)

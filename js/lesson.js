@@ -58,5 +58,45 @@ tabParent.onclick = (event) => {
 }
 setInterval(nextTabContent, 3000)
 
+// CONVERTER
 
+const usdInput = document.querySelector('#usd')
+const somInput = document.querySelector('#som')
+const euroInput = document.querySelector('#eur')
 
+const clearInputs = () => {
+    somInput.value = ''
+    usdInput.value = ''
+    euroInput.value = ''
+}
+
+const converter = (element, targetElements) => {
+    element.oninput = () => {
+        const request = new XMLHttpRequest()
+        request.open('GET', '../data/converter.json')
+        request.setRequestHeader('Content-type', 'application/json')
+        request.send()
+        request.onload = () => {
+            const data = JSON.parse(request.response)
+            if (element.id === 'som') {
+                targetElements.usd.value = (element.value / data.usd).toFixed(2)
+                targetElements.euro.value = (element.value / data.euro).toFixed(2)
+            }
+            if (element.id === 'usd') {
+                targetElements.som.value = (element.value * data.usd).toFixed(2)
+                targetElements.euro.value = ((element.value * data.usd) / data.euro).toFixed(2)
+            }
+            if (element.id === 'eur') {
+                targetElements.som.value = (element.value * data.euro).toFixed(2)
+                targetElements.usd.value = ((element.value * data.euro) / data.usd).toFixed(2)
+            }
+            if (element.value === ''){
+                clearInputs()
+            }
+        }
+    }
+}
+
+converter(somInput, { usd: usdInput, euro: euroInput })
+converter(usdInput, { som: somInput, euro: euroInput })
+converter(euroInput, { som: somInput, usd: usdInput })
