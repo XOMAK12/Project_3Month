@@ -122,7 +122,7 @@ const renderCardSwitcher = () => {
 
 btnNext.onclick = () => {
     cardNumber++
-    if (cardNumber >= 200){
+    if (cardNumber > 200){
         cardNumber = 1
     }
     renderCardSwitcher()
