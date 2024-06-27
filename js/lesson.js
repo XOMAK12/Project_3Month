@@ -142,3 +142,30 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     .then(data => {
         console.log(data)
     })
+
+// WEATHER
+
+const URL = 'http://api.openweathermap.org/data/2.5/weather'
+const APIKEY = 'e417df62e04d3b1b111abeab19cea714'
+
+const searchInput = document.querySelector('.cityName')
+const city = document.querySelector('.city')
+const temp = document.querySelector('.temp')
+
+const citySearch = () => {
+    searchInput.oninput = (event) => {
+        fetch(`${URL}?q=${event.target.value}&appid=${APIKEY}`)
+            .then(response => response.json())
+            .then(data => {
+                city.innerHTML = data.name ? data.name : 'Город не найден'
+                temp.innerHTML = data.main?.temp ? Math.round(data.main.temp - 273) + '&deg;С' : '///'
+                if (!event.target.value) {
+                    city.innerHTML = ''
+                    temp.innerHTML = ''
+                }
+            })
+    }
+}
+citySearch()
+
+// optional chaining - ?.
