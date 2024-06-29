@@ -81,11 +81,7 @@ resetBtn.onclick = () => {
 
 const fetchPersonsData = async (url, selectorCallback) => {
     try {
-        const response = await fetch(url, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        const response = await fetch(url, {});
         if (!response.ok) {
             throw new Error('Network response was not ok')
         }
