@@ -1,0 +1,30 @@
+.main_block_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 75px;
+}
+
+.card {
+    margin: 1em;
+    padding: 1em;
+    width: 300px;
+    text-align: center;
+    background-color: #ffd3d3;
+    border: 2px solid orange;
+    border-radius: 20px;
+}
+
+.card img {
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.card h2,p {
+    padding-top: 10px;
+    color: #414349;
+    font-size: 20px;
+}
